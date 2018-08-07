@@ -7,8 +7,8 @@ var connect = require("connect");
 var app = connect().use(connect.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public'));
 //Return the index for any other GET request
-app.get('/*', function (req, res) {
-    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+app.get('/', function(req, res) {
+  res.render('default.htm');
 });
 app.listen(5000);
 
