@@ -3,13 +3,9 @@ const path = require('path')
 const cool = require('cool-ascii-faces')
 const PORT = process.env.PORT || 5000
 var connect = require("connect");
- 
-
-var connect = require("connect");
 
 var app = connect().use(connect.static(__dirname + '/public'));
-
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
 //Return the index for any other GET request
 app.get('/*', function (req, res) {
     res.sendFile('index.html', {root: path.join(__dirname, 'public')});
