@@ -2,6 +2,13 @@ const express = require('express')
 const path = require('path')
 const cool = require('cool-ascii-faces')
 const PORT = process.env.PORT || 5000
+var connect = require("connect");
+
+var app = connect(); 
+
+app.listen(5000);
+
+
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
